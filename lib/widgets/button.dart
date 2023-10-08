@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:poc_pega_bandeira/utils/colors.dart';
 
 class MyButton extends StatelessWidget {
-  MyButton({super.key, this.width, this.color, this.textSize, required this.text, required this.onPressed});
+  MyButton(
+      {super.key,
+      this.width,
+      this.height,
+      this.color,
+      this.textSize,
+      required this.text,
+      required this.onPressed});
 
   var width;
+  var height;
   var color;
   var text;
   var textSize;
 
-  final VoidCallback onPressed; // Um callback que não recebe argumentos e não retorna valor
+  final VoidCallback
+      onPressed; // Um callback que não recebe argumentos e não retorna valor
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +35,11 @@ class MyButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: textSize ?? 20, fontFamily: 'Comic'),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: textSize ?? 20,
+              fontFamily: 'Comic'),
         ),
       ),
     );

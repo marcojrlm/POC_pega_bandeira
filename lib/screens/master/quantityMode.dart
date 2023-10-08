@@ -11,7 +11,7 @@ class QuantityMode extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
@@ -35,7 +35,7 @@ class QuantityMode extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      "Neste modo, os participantes competem para capturar o maior número de bandeiras dentro de um tempo determinado pelo professor.",
+                      "Neste modo, os participantes competem para capturar o número de bandeiras determinado pelo professor.",
                       softWrap: true,
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
@@ -58,7 +58,7 @@ class QuantityMode extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      "Neste modo, os participantes competem para capturar o maior número de bandeiras dentro de um tempo determinado pelo professor.",
+                      "A adrenalina corre solta enquanto as equipes estrategicamente buscam conquistar o território e acumular pontos antes do cronômetro atingir zero.",
                       softWrap: true,
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
@@ -75,12 +75,12 @@ class QuantityMode extends StatelessWidget {
               child: MyButton(
                 text: "Iniciar",
                 color: AppColors.secondary,
-                textSize: 30,
-                onPressed: (){},
+                textSize: 30.0,
+                onPressed: () => Navigator.pushNamed(context, '/quantityGame'),
               ),
             ),
             Center(
-              child: Image.network('/assets/Logooby.png', width: 300),
+              child: Image.asset('assets/Logooby.png', width: 300),
             )
           ],
         ),

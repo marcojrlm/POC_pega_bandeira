@@ -1,9 +1,19 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:poc_pega_bandeira/utils/colors.dart';
 import 'package:poc_pega_bandeira/widgets/button.dart';
 
-class TimeMode extends StatelessWidget {
-  const TimeMode({super.key});
+class GameMode extends StatelessWidget {
+  const GameMode({super.key,
+    required this.title,
+    required this.rules,
+    required this.starter
+  });
+
+  final String title;
+  final List<String> rules;
+  final Function() starter;
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +24,24 @@ class TimeMode extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              "Modo tempo",
+            Text(
+              title,
               style: TextStyle(
-                  fontSize: 50, fontFamily: 'Comic', color: AppColors.primary),
+                  fontSize: 30, fontFamily: 'Comic', color: AppColors.secondary),
             ),
             const Text(
               "Regras",
               style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 20,
                   fontFamily: 'Comic',
-                  color: AppColors.secondary),
+                  color: AppColors.primary),
             ),
             const Column(children: [
               Row(
                 children: [
                   Icon(
                     Icons.play_arrow,
-                    color: AppColors.secondary, // Cor do ícone
+                    color: AppColors.primary, // Cor do ícone
                   ),
                   Expanded(
                     child: Text(
@@ -42,7 +52,7 @@ class TimeMode extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Comic',
-                          color: AppColors.primary),
+                          color: AppColors.secondary),
                     ),
                   ),
                 ],
@@ -54,18 +64,18 @@ class TimeMode extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.play_arrow,
-                    color: AppColors.secondary, // Cor do ícone
+                    color: AppColors.primary, // Cor do ícone
                   ),
                   Expanded(
                     child: Text(
-                      "A adrenalina corre solta enquanto as equipes estrategicamente buscam conquistar o território e acumular pontos antes do cronômetro atingir zero.",
+                      "Neste modo, os participantes competem para capturar o maior número de bandeiras dentro de um tempo determinado pelo professor.",
                       softWrap: true,
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Comic',
-                          color: AppColors.primary),
+                          color: AppColors.secondary),
                     ),
                   ),
                 ],
@@ -74,12 +84,13 @@ class TimeMode extends StatelessWidget {
             Center(
               child: MyButton(
                 text: "Iniciar",
+                color: AppColors.secondary,
                 textSize: 30.0,
-                onPressed: () => Navigator.pushNamed(context, '/timeGame'),
+                onPressed: (){},
               ),
             ),
             Center(
-              child: Image.asset('assets/Logooby.png', width: 300),
+              child: Image.network('assets/Logooby.png', width: 300),
             )
           ],
         ),

@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:poc_pega_bandeira/utils/colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:poc_pega_bandeira/widgets/button.dart';
 
-class MasterHome extends StatelessWidget {
+class MasterHome extends StatefulWidget {
   const MasterHome({super.key});
- 
+
+  @override
+  State<MasterHome> createState() => _MasterHomeState();
+}
+
+class _MasterHomeState extends State<MasterHome> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,11 +42,17 @@ class MasterHome extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            MyButton(text: "Modo tempo", onPressed: () => Navigator.pushNamed(context, '/timeMode')),
+            MyButton(
+                text: "Modo tempo",
+                onPressed: () => Navigator.pushNamed(context, '/timeMode')),
             const SizedBox(
               height: 20,
             ),
-            MyButton(text: "Modo quantidade", color: AppColors.secondary, width: 0.6, onPressed: () => Navigator.pushNamed(context, '/quantityMode')),
+            MyButton(
+                text: "Modo quantidade",
+                color: AppColors.secondary,
+                width: 0.6,
+                onPressed: () => Navigator.pushNamed(context, '/quantityMode')),
           ],
         ),
       ),

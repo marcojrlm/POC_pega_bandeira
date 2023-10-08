@@ -5,10 +5,12 @@
 import FlutterMacOS
 import Foundation
 
-import flutter_blue_plus
+import audioplayers_darwin
+import flutter_blue
 import path_provider_foundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  FlutterBluePlusPlugin.register(with: registry.registrar(forPlugin: "FlutterBluePlusPlugin"))
+  AudioplayersDarwinPlugin.register(with: registry.registrar(forPlugin: "AudioplayersDarwinPlugin"))
+  FlutterBluePlugin.register(with: registry.registrar(forPlugin: "FlutterBluePlugin"))
   PathProviderPlugin.register(with: registry.registrar(forPlugin: "PathProviderPlugin"))
 }
